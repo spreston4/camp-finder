@@ -1,8 +1,11 @@
+import React from "react";
+import CampSearch from "./components/CampSearch/CampSearch";
+
 function App() {
   return (
-    <div className="App">
-      <p>Woop there it is.</p>
-    </div>
+    <React.Fragment>
+      <CampSearch />
+    </React.Fragment>
   );
 }
 
