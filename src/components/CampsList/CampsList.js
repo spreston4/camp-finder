@@ -2,14 +2,18 @@ import React, { useState, useEffect } from "react";
 import styles from "./CampsList.module.css";
 import CampItem from "../CampItem/CampItem";
 import Card from "../ui/Card/Card";
+import loadingImage from '../../assets/images/Spinner-1s-200px-bg-light.gif';
 
 const resultsLimit = 75;
 
 // Fetches campgrounds from NPS API. Renders a CampItem for each result returned. Accepts search criteria from CampSearch.
 const CampsList = (props) => {
   const [campsArray, setCampsArray] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const fetchCamps = async () => {
+      setIsLoading(true);
       try {
         const response = await fetch(
           `https://developer.nps.gov/api/v1/campgrounds?stateCode=${props.searchTerms}&limit=${resultsLimit}}&api_key=${process.env.REACT_APP_NPS_API_KEY}`
@@ -58,6 +62,7 @@ const CampsList = (props) => {
         }
 
         setCampsArray(loadedCamps);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching camps: ", error);
       }
@@ -73,7 +78,8 @@ const CampsList = (props) => {
 
   return (
     <Card className={styles.container}>
-      {campsArray.map((camp) => (
+      {isLoading && <img src={loadingImage} />}
+      {!isLoading && campsArray.map((camp) => (
         <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
       ))}
     </Card>
