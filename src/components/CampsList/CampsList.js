@@ -14,7 +14,7 @@ const CampsList = (props) => {
     const fetchCamps = async () => {
       try {
         const response = await fetch(
-          `https://developer.nps.gov/api/v1/campgrounds?stateCode=${stateCode}&limit=${resultsLimit}}&api_key=${process.env.REACT_APP_NPS_API_KEY}`
+          `https://developer.nps.gov/api/v1/campgrounds?stateCode=${props.searchTerms}&limit=${resultsLimit}}&api_key=${process.env.REACT_APP_NPS_API_KEY}`
         );
 
         const data = await response.json();
@@ -66,7 +66,7 @@ const CampsList = (props) => {
     };
 
     fetchCamps();
-  }, []);
+  }, [props.searchTerms]);
 
   console.log(campsArray);
 
