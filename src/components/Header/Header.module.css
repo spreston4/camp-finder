@@ -1,0 +1,52 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%
+}
+
+.title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    padding: 1.25rem 10%;
+}
+
+.front {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 110%;
+    height: 5rem;
+    padding: 1.25rem 10%;
+    background-color: var(--alt);
+    border-bottom: 2px dotted var(--trim-light);
+    box-shadow: var(--box-shadow);
+    /* transform: rotateZ(-1deg) translateX(-1rem) translateY(-1rem); */
+}
+
+.middle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9;
+    width: 100%;
+    height: 6rem;
+    background-color: var(--primary);
+    box-shadow: var(--box-shadow);
+    transform: rotateZ(-3deg) translateX(-1rem) translateY(-1rem);
+}
+
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 6rem;
+    background-color: var(--bg-light);
+    box-shadow: var(--box-shadow);
+    transform: rotateZ(-5deg) translateX(-1rem) translateY(-1rem);
+}

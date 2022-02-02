@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import div, { useState } from "react";
+import styles from "./App.module.css";
+import Header from "./components/Header/Header";
 import CampSearch from "./components/CampSearch/CampSearch";
 import CampsList from "./components/CampsList/CampsList";
 
@@ -12,10 +14,11 @@ function App() {
   console.log(searchTerms);
 
   return (
-    <React.Fragment>
+    <div className={styles.container}>
+      <Header />
       <CampSearch onUpdateSearch={searchUpdateHandler} />
-      <CampsList searchTerms={searchTerms} />
-    </React.Fragment>
+      {searchTerms && <CampsList searchTerms={searchTerms} />}
+    </div>
   );
 }
 
