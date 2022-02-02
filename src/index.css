@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto:wght@100;300&display=swap");
 
 :root {
-  --main-color: forestgreen;
+  --trim-light: #fac203;
+  --trim-dark: #d89002;
+  --bg-light: #286b23;
+  --bd-dark: #136306;
+  --primary: #4067e2;
+  --alt: #fffeea;
+  --box-shadow: 0 2px 8px rgba(64, 103, 226, 0.25);
 }
 
 *,
