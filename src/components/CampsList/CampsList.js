@@ -81,17 +81,20 @@ const CampsList = (props) => {
 
   return (
     <Card className={styles.container}>
-      {fetchError && (
-        <p className={styles.error}>
-          Error loading campgrounds. {fetchError.message}.
-        </p>
-      )}
       {!fetchError && isLoading && <img src={loadingImage} />}
       {!fetchError &&
         !isLoading &&
         campsArray.map((camp) => (
           <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
         ))}
+      {!fetchError && !isLoading && campsArray.length === 0 && (
+        <p className={styles.message}>No campgrounds found.</p>
+      )}
+      {fetchError && (
+        <p className={`${styles.message} ${styles.error}`}>
+          Error loading campgrounds. {fetchError.message}.
+        </p>
+      )}
     </Card>
   );
 };
