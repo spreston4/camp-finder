@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./CampsList.module.css";
 import CampItem from "../CampItem/CampItem";
 import Card from "../ui/Card/Card";
-import loadingImage from '../../assets/images/Spinner-1s-200px-bg-light.gif';
+import loadingImage from "../../assets/images/Spinner-1s-200px-bg-light.gif";
 
 const resultsLimit = 75;
 
@@ -10,9 +10,11 @@ const resultsLimit = 75;
 const CampsList = (props) => {
   const [campsArray, setCampsArray] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const fetchCamps = async () => {
+      setFetchError(false);
       setIsLoading(true);
       try {
         const response = await fetch(
@@ -65,6 +67,7 @@ const CampsList = (props) => {
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching camps: ", error);
+        setFetchError(error);
       }
     };
 
@@ -78,10 +81,17 @@ const CampsList = (props) => {
 
   return (
     <Card className={styles.container}>
-      {isLoading && <img src={loadingImage} />}
-      {!isLoading && campsArray.map((camp) => (
-        <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
-      ))}
+      {fetchError && (
+        <p className={styles.error}>
+          Error loading campgrounds. {fetchError.message}.
+        </p>
+      )}
+      {!fetchError && isLoading && <img src={loadingImage} />}
+      {!fetchError &&
+        !isLoading &&
+        campsArray.map((camp) => (
+          <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
+        ))}
     </Card>
   );
 };

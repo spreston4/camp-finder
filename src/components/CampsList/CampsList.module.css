@@ -9,3 +9,12 @@ img {
   margin-right: auto;
   display: block;
 }
+
+.error {
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+  text-align: center;
+  color: red;
+  background-color: var(--alt);
+  border: var(--border-dotted);
+}
