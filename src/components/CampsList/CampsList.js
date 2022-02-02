@@ -7,6 +7,7 @@ const stateCode = "Ca";
 const queryString = "";
 const resultsLimit = 75;
 
+// Fetches campgrounds from NPS API. Renders a CampItem for each result returned. Accepts search criteria from CampSearch.
 const CampsList = (props) => {
   const [campsArray, setCampsArray] = useState([]);
   useEffect(() => {
@@ -70,7 +71,7 @@ const CampsList = (props) => {
   console.log(campsArray);
 
   return (
-    <Card className={styles.search}>
+    <Card className={styles.container}>
       <p>Woop there it is.</p>
     </Card>
   );
