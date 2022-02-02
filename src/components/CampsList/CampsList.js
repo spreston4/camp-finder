@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CampsList.module.css";
+import CampItem from "../CampItem/CampItem";
 import Card from "../ui/Card/Card";
 
 const parkCode = "";
@@ -72,7 +73,9 @@ const CampsList = (props) => {
 
   return (
     <Card className={styles.container}>
-      <p>Woop there it is.</p>
+      {campsArray.map((camp) => (
+        <CampItem camp={camp} />
+      ))}
     </Card>
   );
 };

@@ -1,4 +1,6 @@
 .container {
+    padding: .5rem;
     margin: .5rem auto;
-    border: 1px solid var(--trim-light);
+    border: 2px dotted var(--trim-light);
+    background-color: var(--alt);
 }

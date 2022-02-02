@@ -4,9 +4,10 @@
   --trim-light: #fac203;
   --trim-dark: #d89002;
   --bg-light: #286b23;
-  --bd-dark: #136306;
+  --bg-dark: #136306;
   --primary: #4067e2;
-  --alt: #fffeea;
+  --alt: #fdfdf5;
+  --text: #3c3d3a;
   --box-shadow: 0 2px 8px rgba(64, 103, 226, 0.25);
 }
 
@@ -27,8 +28,8 @@ body {
   -webkit-font-smoothing: antialiased;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #ffffff;
-  color: #3c3d3a;
+  background-color: var(--alt);
+  color: var(--primary);
 }
 img,
 picture,
