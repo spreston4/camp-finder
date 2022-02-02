@@ -2,7 +2,6 @@
   padding: 0.25rem 0.75rem;
   margin: 0.25rem;
   font-weight: bold;
-  /* border: 2px dotted var(--trim-light); */
   border: none;
   border-radius: 3px;
   box-shadow: var(--box-shadow);
@@ -18,7 +17,6 @@
 .primary:hover,
 .primary:active {
   cursor: pointer;
-  /* border: 2px dotted var(--trim-dark); */
   transform: scale(1.1);
   transition: 75ms;
 }

@@ -6,18 +6,27 @@ import CampsList from "./components/CampsList/CampsList";
 
 function App() {
   const [searchTerms, setSearchTerms] = useState();
+  const [selectedCamp, setSelectedCamp] = useState();
 
   const searchUpdateHandler = (terms) => {
     setSearchTerms(terms);
   };
 
-  console.log(searchTerms);
+  const viewCampHandler = (camp) => {
+    setSelectedCamp(camp);
+  };
+
+  const closeCampHandler = () => {
+    setSelectedCamp();
+  };
+
+  console.log(selectedCamp);
 
   return (
     <div className={styles.container}>
       <Header />
-      <CampSearch onUpdateSearch={searchUpdateHandler} />
-      {searchTerms && <CampsList searchTerms={searchTerms} />}
+      {!selectedCamp && <CampSearch onUpdateSearch={searchUpdateHandler} />}
+      {!selectedCamp && searchTerms && <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} />}
     </div>
   );
 }

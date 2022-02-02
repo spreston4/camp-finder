@@ -1,6 +1,6 @@
 .container {
-    padding: .5rem;
-    margin: .5rem auto;
-    border: 2px dotted var(--trim-light);
-    background-color: var(--alt);
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+  border: var(--border-dotted);
+  background-color: var(--alt);
 }

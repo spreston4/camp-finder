@@ -3,9 +3,6 @@ import styles from "./CampsList.module.css";
 import CampItem from "../CampItem/CampItem";
 import Card from "../ui/Card/Card";
 
-const parkCode = "";
-const stateCode = "Ca";
-const queryString = "";
 const resultsLimit = 75;
 
 // Fetches campgrounds from NPS API. Renders a CampItem for each result returned. Accepts search criteria from CampSearch.
@@ -69,12 +66,15 @@ const CampsList = (props) => {
     fetchCamps();
   }, [props.searchTerms]);
 
-  console.log(campsArray);
+  // Lift selected camp info to App
+  const viewCampHandler = (camp) => {
+    props.onViewCamp(camp);
+  };
 
   return (
     <Card className={styles.container}>
       {campsArray.map((camp) => (
-        <CampItem camp={camp} />
+        <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
       ))}
     </Card>
   );
