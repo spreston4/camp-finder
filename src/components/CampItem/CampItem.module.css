@@ -4,3 +4,7 @@
   border: var(--border-dotted);
   background-color: var(--alt);
 }
+
+.content {
+  margin: .25rem;
+}
