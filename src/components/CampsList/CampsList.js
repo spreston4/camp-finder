@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./CampSearch.module.css";
+import styles from "./CampsList.module.css";
 import Card from "../ui/Card/Card";
 
 const parkCode = "";
@@ -7,7 +7,7 @@ const stateCode = "Ca";
 const queryString = "";
 const resultsLimit = 75;
 
-const CampSearch = (props) => {
+const CampsList = (props) => {
   const [campsArray, setCampsArray] = useState([]);
   useEffect(() => {
     const fetchCamps = async () => {
@@ -76,4 +76,4 @@ const CampSearch = (props) => {
   );
 };
 
-export default CampSearch;
+export default CampsList;

@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Roboto:wght@100;300&display=swap");
 
-/* CSS Reset */
+:root {
+  --main-color: forestgreen;
+}
+
 *,
 *::before,
 *::after {
@@ -19,7 +22,7 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
-  color: #485549;
+  color: #3c3d3a;
 }
 img,
 picture,
