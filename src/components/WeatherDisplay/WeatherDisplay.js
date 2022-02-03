@@ -3,6 +3,7 @@ import styles from "./WeatherDisplay.module.css";
 
 const WeatherDisplay = (props) => {
   const [forecast, setForecast] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -15,35 +16,37 @@ const WeatherDisplay = (props) => {
         const loadedForecast = [];
 
         for (const key in forecastData) {
-            loadedForecast.push({
-                key: key,
-                dt: forecastData[key].dt,
-                feelsLike: forecastData[key].feels_like,
-                humidity: forecastData[key].humidity,
-                sunrise: forecastData[key].sunrise,
-                sunset: forecastData[key].sunset,
-                temp: forecastData[key].temp,
-                uvi: forecastData[key].uvi,
-                weather: forecastData[key].weather,
-                windGust: forecastData[key].wind_gust,
-                windSpeed: forecastData[key].wind_speed,
-            });
+          loadedForecast.push({
+            key: key,
+            dt: forecastData[key].dt,
+            feelsLike: forecastData[key].feels_like,
+            humidity: forecastData[key].humidity,
+            sunrise: forecastData[key].sunrise,
+            sunset: forecastData[key].sunset,
+            temp: forecastData[key].temp,
+            uvi: forecastData[key].uvi,
+            weather: forecastData[key].weather,
+            windGust: forecastData[key].wind_gust,
+            windSpeed: forecastData[key].wind_speed,
+          });
         }
 
         setForecast(loadedForecast);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching weather: ", error);
       }
     };
 
     fetchWeather();
-  }, [props]);
+  }, []);
 
   console.log(forecast);
 
   return (
     <div className={styles.container}>
-      <p>Weather Display</p>
+      {isLoading && <p>Loading weather forecast.</p>}
+      {!isLoading && <p>Weather Display.</p>}
     </div>
   );
 };
