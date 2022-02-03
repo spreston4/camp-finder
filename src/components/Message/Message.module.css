@@ -1,0 +1,12 @@
+.container {
+  width: 60%;
+  padding: 5rem 10rem;
+  text-align: left;
+  color: #1a171b;
+  background-color: #c6d8de;
+}
+
+.container h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useInput from "../../hooks/use-input";
 import styles from "./CampSearch.module.css";
-import Card from "../ui/Card/Card";
+import div from "../ui/Card/Card";
 import Button from "../ui/Button/Button";
 
 const CampSearch = (props) => {
@@ -39,11 +39,11 @@ const CampSearch = (props) => {
   const stateClasses = stateHasError ? `${styles.invalid}` : "";
 
   return (
-    <Card className={styles.container}>
+    <div className={styles.container}>
       <form onSubmit={formSubmissionHandler}>
         <div className={stateClasses}>
           <label htmlFor="state-input">
-            Search for campgrounds by State ID!
+            <h3>FIND YOUR CAMP</h3>
           </label>
           <input
             onChange={stateChangeHandler}
@@ -55,13 +55,13 @@ const CampSearch = (props) => {
           />
         </div>
         <Button alt={false} type="submit">
-          Submit
+          SUBMIT
         </Button>
       </form>
       {stateHasError && (
         <p className={styles.error}>Enter a valid state abbreviation: XX</p>
       )}
-    </Card>
+    </div>
   );
 };
 

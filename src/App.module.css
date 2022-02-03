@@ -1,3 +1,11 @@
 .container {
   position: relative;
 }
+
+.functions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}

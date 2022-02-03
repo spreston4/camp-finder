@@ -1,17 +1,8 @@
 .primary {
-  padding: 0.25rem 0.75rem;
+  padding: .5rem 1rem;
   margin: 0.25rem;
   font-weight: bold;
-  border: none;
-  border-radius: 3px;
-  box-shadow: var(--box-shadow);
-  color: var(--alt);
-  background-color: var(--primary);
-}
-
-.alt {
-  color: var(--primary) !important;
-  background-color: var(--alt) !important;
+  
 }
 
 .primary:hover,
