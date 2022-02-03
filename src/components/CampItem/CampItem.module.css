@@ -1,8 +1,9 @@
 .container {
+  width: 100%;
   padding: 0.5rem;
-  margin: 0.5rem auto;
-  border: var(--border-dotted);
-  background-color: var(--alt);
+  color: #272f3d;
+  background-color: #c6d8de;
+  /* border: 1px solid #272f3d; */
 }
 
 .content {

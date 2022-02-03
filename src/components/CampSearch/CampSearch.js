@@ -4,6 +4,7 @@ import styles from "./CampSearch.module.css";
 import div from "../ui/Card/Card";
 import Button from "../ui/Button/Button";
 
+// TODO: Convert to drop down state selector
 const CampSearch = (props) => {
   const {
     value: enteredState,
