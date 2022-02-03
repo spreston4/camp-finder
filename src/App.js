@@ -1,6 +1,7 @@
 import div, { useState } from "react";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
 import CampSearch from "./components/CampSearch/CampSearch";
 import CampsList from "./components/CampsList/CampsList";
 import CampView from "./components/CampView/CampView";
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className={styles.container}>
       <Header />
+      <Banner />
       {!selectedCamp && <CampSearch onUpdateSearch={searchUpdateHandler} />}
       {!selectedCamp && searchTerms && (
         <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} />
