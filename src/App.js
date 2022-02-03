@@ -21,8 +21,6 @@ function App() {
     setSelectedCamp();
   };
 
-  console.log(selectedCamp);
-
   return (
     <div className={styles.container}>
       <Header />
