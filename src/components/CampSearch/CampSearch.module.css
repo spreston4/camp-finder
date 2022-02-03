@@ -11,6 +11,12 @@
   font-size: 2rem;
 }
 
+.button {
+  color: #ffffff;
+  background-color: #445a3f;
+  border: 1px solid #ffffff;
+}
+
 form {
   display: flex;
   flex-direction: column;

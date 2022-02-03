@@ -46,7 +46,7 @@ const CampSearch = (props) => {
             <h3>FIND YOUR CAMP</h3>
           </label>
           <input
-            onChange={stateChangeHandler}
+            onChange={stateChangeHandler}s
             onBlur={stateBlurHandler}
             value={enteredState}
             name="state-input"
@@ -54,8 +54,8 @@ const CampSearch = (props) => {
             type="text"
           />
         </div>
-        <Button alt={false} type="submit">
-          SUBMIT
+        <Button className={styles.button} type="submit">
+          SEARCH
         </Button>
       </form>
       {stateHasError && (

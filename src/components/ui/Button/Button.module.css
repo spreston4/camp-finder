@@ -1,13 +1,13 @@
-.primary {
+.button {
   padding: .5rem 1rem;
   margin: 0.25rem;
   font-weight: bold;
-  
+  transition: 75ms;
 }
 
-.primary:hover,
-.primary:active {
+.hover {
   cursor: pointer;
-  transform: scale(1.04);
+  background-color: #c39a5f;
+  border: 1px solid #c39a5f;
   transition: 75ms;
 }
