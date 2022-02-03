@@ -12,11 +12,14 @@ form {
 
 label {
   margin: 0.25rem;
+  font-weight: bold;
 }
 
 input {
+  width: 98%;
   margin: 0.25rem;
   padding: 0.25rem;
+  font-size: small;
   color: var(--text);
   border-radius: 3px;
   border: 1px solid #cccccc;
@@ -24,4 +27,20 @@ input {
 
 input:focus {
   outline: none;
+}
+
+.invalid input {
+  border: 1px solid #b40e0e;
+  background-color: #fddddd;
+}
+
+.invalid input:focus {
+  border-color: #ff8800;
+  background-color: #fbe8d2;
+}
+
+.error {
+  color: #b40e0e;
+  font-size: small;
+  text-align: center;
 }
