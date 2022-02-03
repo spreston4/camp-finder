@@ -1,5 +1,5 @@
 .container {
-  width:100%;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,22 +11,24 @@
   padding: 2rem 10%;
   color: #ffffff;
   background-color: transparent;
-  transition: 300ms;
+  transition: 600ms;
 }
 
 .title h1 {
   font-size: 3.5rem;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.65);
+  transition: 600ms;
 }
 
 .small {
-  width: 100%;
-  padding: 1rem 10%;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, .5);
-  transition: 300ms;
+  padding: 1rem 10% !important;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(4px) grayscale(75%);
+  transition: 600ms;
 }
 
 .small h1 {
-  font-size: 2rem;
+  font-size: 2rem !important;
+  transition: 600ms;
 }
-
