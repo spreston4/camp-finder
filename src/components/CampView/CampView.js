@@ -4,7 +4,7 @@ import Card from '../ui/Card/Card';
 import Button from '../ui/Button/Button';
 
 const CampView = (props) => {
-    // console.log(props.camp);
+    console.log(props.camp);
     return (
         <Card className={styles.container}>
             <div className={styles.content}>
