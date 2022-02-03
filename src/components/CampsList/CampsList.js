@@ -4,6 +4,7 @@ import CampItem from "../CampItem/CampItem";
 import Card from "../ui/Card/Card";
 import loadingImage from "../../assets/images/Spinner-1s-200px-bg-light.gif";
 
+// TODO: Add limit filtering option
 const resultsLimit = 75;
 
 // Fetches campgrounds from NPS API. Renders a CampItem for each result returned. Accepts search criteria from CampSearch.
