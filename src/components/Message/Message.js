@@ -5,7 +5,7 @@ const Message = () => {
     <div className={styles.container}>
       <h3>PLAN YOUR NEXT ADVENTURE</h3>
       <p>
-        Find the best campground &#38; the perfect weather for your next
+        Harness the power of the U.S. National Park Service to find the best campground &#38; the perfect weather for your next
         excursion! Use the search bar to find campgrounds in your desired state.
         Select a campground to view additional details and a 7-day weather
         forecast for the area.

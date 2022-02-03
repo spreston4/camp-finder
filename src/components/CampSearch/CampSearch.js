@@ -44,6 +44,7 @@ const CampSearch = (props) => {
         <div className={stateClasses}>
           <label htmlFor="state-input">
             <h3>FIND YOUR CAMP</h3>
+            <p>Enter a 2-character state abbreviation.</p>
           </label>
           <input
             onChange={stateChangeHandler}s
@@ -59,7 +60,7 @@ const CampSearch = (props) => {
         </Button>
       </form>
       {stateHasError && (
-        <p className={styles.error}>Enter a valid state abbreviation: XX</p>
+        <p className={styles.error}>Error: Enter a valid state abbreviation: XX</p>
       )}
     </div>
   );

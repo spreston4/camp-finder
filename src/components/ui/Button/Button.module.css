@@ -1,13 +1,27 @@
 .button {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   margin: 0.25rem;
   font-weight: bold;
-  transition: 75ms;
+  transition: 400ms;
 }
 
 .hover {
   cursor: pointer;
   background-color: #c39a5f;
   border: 1px solid #c39a5f;
-  transition: 75ms;
+  transition: 400ms;
+}
+
+.arrow {
+  font-size: 1.25rem;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 400ms;
+}
+
+.show {
+  opacity: 1;
+  transition: 400ms;
 }

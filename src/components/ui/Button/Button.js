@@ -13,7 +13,13 @@ const Button = (props) => {
     setIsHover(false);
   };
 
-  const buttonClasses = `${styles.button} ${props.className} ${isHover ? styles.hover : ''}`;
+  const buttonClasses = `${styles.button} ${props.className} ${
+    isHover ? styles.hover : ""
+  }`;
+
+  const arrowClasses = `${styles.arrow} ${
+    isHover ? styles.show : styles.hidden
+  }`;
 
   return (
     <button
@@ -24,7 +30,7 @@ const Button = (props) => {
       type={props.type}
       disabled={props.disabled}
     >
-      {props.children}
+      {props.children} <span className={arrowClasses}>></span>
     </button>
   );
 };
