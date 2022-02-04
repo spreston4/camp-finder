@@ -1,4 +1,4 @@
-import div, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
@@ -10,6 +10,7 @@ import CampView from "./components/CampView/CampView";
 function App() {
   const [searchTerms, setSearchTerms] = useState();
   const [selectedCamp, setSelectedCamp] = useState();
+  const contentRef = useRef();
 
   const searchUpdateHandler = (terms) => {
     setSearchTerms(terms);
@@ -29,15 +30,16 @@ function App() {
       <Banner />
       <div className={styles.functions}>
         <Message />
-        <CampSearch onUpdateSearch={searchUpdateHandler} />
+        <CampSearch onUpdateSearch={searchUpdateHandler} scrollRef={contentRef}/>
       </div>
-
-      {!selectedCamp && searchTerms && (
-        <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} />
-      )}
-      {selectedCamp && (
-        <CampView camp={selectedCamp} onCloseCamp={closeCampHandler} />
-      )}
+    <div ref={contentRef}>
+        {!selectedCamp && searchTerms && (
+          <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} />
+        )}
+        {selectedCamp && (
+          <CampView camp={selectedCamp} onCloseCamp={closeCampHandler} />
+        )}
+      </div>
     </div>
   );
 }

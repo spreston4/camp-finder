@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import useInput from "../../hooks/use-input";
 import styles from "./CampSearch.module.css";
 import div from "../ui/Card/Card";
@@ -6,6 +6,7 @@ import Button from "../ui/Button/Button";
 
 // TODO: Convert to drop down state selector
 const CampSearch = (props) => {
+  const scrollRef = useRef();
   const {
     value: enteredState,
     isValid: enteredStateIsValid,
@@ -34,7 +35,10 @@ const CampSearch = (props) => {
       return;
     }
 
+    // TODO: troubleshoot autoscroll bug - won't scroll on first submit after a fresh reload.
     props.onUpdateSearch(enteredState);
+    scrollRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+    stateResetHandler();
   };
 
   const stateClasses = stateHasError ? `${styles.invalid}` : "";
@@ -48,7 +52,7 @@ const CampSearch = (props) => {
             <p>Enter a 2-character state abbreviation.</p>
           </label>
           <input
-            onChange={stateChangeHandler}s
+            onChange={stateChangeHandler}
             onBlur={stateBlurHandler}
             value={enteredState}
             name="state-input"
@@ -61,8 +65,11 @@ const CampSearch = (props) => {
         </Button>
       </form>
       {stateHasError && (
-        <p className={styles.error}>Error: Enter a valid state abbreviation: XX</p>
+        <p className={styles.error}>
+          Error: Enter a valid state abbreviation: XX
+        </p>
       )}
+      <div ref={scrollRef}></div>
     </div>
   );
 };

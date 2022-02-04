@@ -7,8 +7,8 @@
 
 .hover {
   cursor: pointer;
-  background-color: #c39a5f;
-  border: 1px solid #c39a5f;
+  background-color: #c39a5f !important;
+  border: 1px solid #c39a5f !important;
   transition: 400ms;
 }
 

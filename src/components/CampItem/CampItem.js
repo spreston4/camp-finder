@@ -10,10 +10,16 @@ const CampItem = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>{props.camp.name}</div>
+      <div className={styles.content}>
+        <h3>{props.camp.name.toUpperCase()}</h3>
+      </div>
       <div>
-        <Button onClick={viewCampHandler} alt={false}>
-          View
+        <Button
+          className={styles.button}
+          type="button"
+          onClick={viewCampHandler}
+        >
+          VIEW CAMP
         </Button>
       </div>
     </div>
