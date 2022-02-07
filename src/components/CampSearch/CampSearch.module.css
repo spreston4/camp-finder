@@ -28,26 +28,25 @@ form {
   text-align: center;
 }
 
-input {
+select {
   width: 98%;
   padding: 0.5rem 1rem;
   margin: 0.25rem;
   font-size: small;
-  color: var(--text);
   border-radius: 0px;
   border: 1px solid #cccccc;
 }
 
-input:focus {
+select:focus {
   outline: none;
 }
 
-.invalid input {
+.invalid select {
   border: 1px solid #b40e0e;
   background-color: #fddddd;
 }
 
-.invalid input:focus {
+.invalid select:focus {
   border-color: #ff8800;
   background-color: #fbe8d2;
 }

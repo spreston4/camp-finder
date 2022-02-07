@@ -1,45 +1,39 @@
 import { useState, useRef } from "react";
-import useInput from "../../hooks/use-input";
+import stateList from "../../store/state-list";
 import styles from "./CampSearch.module.css";
-import div from "../ui/Card/Card";
 import Button from "../ui/Button/Button";
 
-// TODO: Convert to drop down state selector
+// Allows the user to select a state to view campgrounds. Pulls selection data frm store/state-list. Passes selected state abbreviation to CampsList through App.
 const CampSearch = (props) => {
-  const scrollRef = useRef();
-  const {
-    value: enteredState,
-    isValid: enteredStateIsValid,
-    hasError: stateHasError,
-    valueChangeHandler: stateChangeHandler,
-    inputBlurHandler: stateBlurHandler,
-    resetHandler: stateResetHandler,
-  } = useInput((value) =>
-    value
-      .trim()
-      .match(
-        /^([Aa][LKSZRAEPlkszraep]|[Cc][AOTaot]|[Dd][ECec]|[Ff][LMlm]|[Gg][AUau]|[Hh][Ii]|[Ii][ADLNadln]|[Kk][SYsy]|[Ll][Aa]|[Mm][ADEHINOPSTadehinopst]|[Nn][CDEHJMVYcdehjmvy]|[Oo][HKRhkr]|[Pp][ARWarw]|[Rr][Ii]|[Ss][CDcd]|[Tt][NXnx]|[Uu][Tt]|[Vv][AITait]|[Ww][AIVYaivy])$/gim
-      )
-  );
-
-  let formIsValid = false;
-
-  if (enteredStateIsValid) {
-    formIsValid = true;
-  }
+  const [selectedState, setSelectedState] = useState({
+    name: "",
+    abbreviation: "",
+  });
+  const [hasError, stateHasError] = useState(false);
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
 
-    if (!formIsValid) {
+    // Ensure valid state is selected.
+    if (selectedState.abbreviation.length === 0) {
+      stateHasError(true);
       return;
     }
-
-    props.onUpdateSearch(enteredState);
-    stateResetHandler();
+    // Lift state to App.
+    props.onUpdateSearch(selectedState);
   };
 
-  const stateClasses = stateHasError ? `${styles.invalid}` : "";
+  const selectChangeHandler = (event) => {
+    // Reset error state if it exists.
+    stateHasError(false);
+    setSelectedState({
+      name: event.target[event.target.selectedIndex].getAttribute("data-name"),
+      abbreviation: event.target.value,
+    });
+  };
+
+  // Conditional formatting for error state.
+  const stateClasses = hasError ? `${styles.invalid}` : "";
 
   return (
     <div className={styles.container}>
@@ -47,27 +41,29 @@ const CampSearch = (props) => {
         <div className={stateClasses}>
           <label htmlFor="state-input">
             <h3>FIND YOUR CAMP</h3>
-            <p>Enter a 2-character state abbreviation.</p>
           </label>
-          <input
-            onChange={stateChangeHandler}
-            onBlur={stateBlurHandler}
-            value={enteredState}
-            name="state-input"
-            id="state-input"
-            type="text"
-          />
+          <select
+            onChange={selectChangeHandler}
+            name="state-selector"
+            id="state-selector"
+          >
+            <option value="">Select a state</option>
+            {stateList.map((state) => (
+              <option
+                key={state.abbreviation}
+                value={state.abbreviation}
+                data-name={state.name}
+              >
+                {state.name}
+              </option>
+            ))}
+          </select>
         </div>
         <Button className={styles.button} type="submit">
           SEARCH
         </Button>
       </form>
-      {stateHasError && (
-        <p className={styles.error}>
-          Error: Enter a valid state abbreviation: XX
-        </p>
-      )}
-      <div ref={scrollRef}></div>
+      {hasError && <p className={styles.error}>Please select a state.</p>}
     </div>
   );
 };

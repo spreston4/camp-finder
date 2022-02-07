@@ -19,7 +19,7 @@ const CampsList = (props) => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://developer.nps.gov/api/v1/campgrounds?stateCode=${props.searchTerms}&limit=${resultsLimit}}&api_key=${process.env.REACT_APP_NPS_API_KEY}`
+          `https://developer.nps.gov/api/v1/campgrounds?stateCode=${props.searchTerms.abbreviation}&limit=${resultsLimit}}&api_key=${process.env.REACT_APP_NPS_API_KEY}`
         );
 
         const data = await response.json();
