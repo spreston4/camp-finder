@@ -21,6 +21,9 @@ const CampSearch = (props) => {
     }
     // Lift state to App.
     props.onUpdateSearch(selectedState);
+
+    // Reset camp view if user is already viewing a camp.
+    props.onCloseCamp();
   };
 
   const selectChangeHandler = (event) => {

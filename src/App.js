@@ -30,7 +30,7 @@ function App() {
       <Banner />
       <div className={styles.functions}>
         <Message />
-        <CampSearch onUpdateSearch={searchUpdateHandler} scrollRef={contentRef}/>
+        <CampSearch onUpdateSearch={searchUpdateHandler} onCloseCamp={closeCampHandler} scrollRef={contentRef}/>
       </div>
       <div ref={contentRef}></div>
     <div>
