@@ -35,9 +35,7 @@ const CampSearch = (props) => {
       return;
     }
 
-    // TODO: troubleshoot autoscroll bug - won't scroll on first submit after a fresh reload.
     props.onUpdateSearch(enteredState);
-    scrollRef.current.scrollIntoView({behavior: "smooth", block: "center"});
     stateResetHandler();
   };
 

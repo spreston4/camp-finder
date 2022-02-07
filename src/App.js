@@ -32,9 +32,10 @@ function App() {
         <Message />
         <CampSearch onUpdateSearch={searchUpdateHandler} scrollRef={contentRef}/>
       </div>
-    <div ref={contentRef}>
+      <div ref={contentRef}></div>
+    <div>
         {!selectedCamp && searchTerms && (
-          <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} />
+          <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} scrollRef={contentRef}/>
         )}
         {selectedCamp && (
           <CampView camp={selectedCamp} onCloseCamp={closeCampHandler} />

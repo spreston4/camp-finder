@@ -66,6 +66,10 @@ const CampsList = (props) => {
 
         setCampsArray(loadedCamps);
         setIsLoading(false);
+        props.scrollRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       } catch (error) {
         console.error("Error fetching camps: ", error);
         setFetchError(error);
