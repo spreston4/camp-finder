@@ -30,7 +30,8 @@ const Button = (props) => {
       type={props.type}
       disabled={props.disabled}
     >
-      {props.children} <span className={arrowClasses}>{'>'}</span>
+      {props.children}
+      <span className={arrowClasses}>{">"}</span>
     </button>
   );
 };

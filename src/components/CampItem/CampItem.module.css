@@ -9,12 +9,22 @@
 .content {
   padding: 0.25rem;
 }
- .content h3 {
-   padding-bottom: .25rem;
- }
+
+.content h3 {
+  padding-bottom: 0.25rem;
+}
+
+.content a {
+  color:#272f3d
+}
 
 .button {
   color: #272f3d;
   background-color: #c6d8de;
   border: 1px solid #272f3d;
+}
+
+.controls {
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #272f3d;
 }

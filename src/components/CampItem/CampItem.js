@@ -8,18 +8,39 @@ const CampItem = (props) => {
     props.onViewCamp(props.camp);
   };
 
-  console.log(props.camp);
+  console.log(props.camp.contacts);
 
   const addressAvailable = props.camp.addresses[0];
+  const emailAvailable = props.camp.contacts.emailAddresses.length > 0;
+  const phoneAvailable = props.camp.contacts.phoneNumbers.length > 0;
+
+  console.log(emailAvailable);
+
+  // console.log(emailAvailable);
+  // if (data && data.email && data.email[0])
+  // if (data?.email?.[0])
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <h3>{props.camp.name.toUpperCase()}</h3>
-        {!addressAvailable && <p>Address data not available.</p>}
-        {addressAvailable && <p>{props.camp.addresses[0].city}</p>}
+        {addressAvailable && (
+          <div>
+            <p>
+              {props.camp.addresses[0].city},{" "}
+              {props.camp.addresses[0].stateCode}{" "}
+              {props.camp.addresses[0].postalCode}
+            </p>
+          </div>
+        )}
+        {emailAvailable && (
+          <p><a href={`mailto:${props.camp.contacts.emailAddresses[0].emailAddress}`}target="_blank">E-Mail</a></p>
+        )}
+        {phoneAvailable && <p>{props.camp.contacts.phoneNumbers[0].phoneNumber}</p>}
+        <br />
+        <p>{props.camp.description}</p>
       </div>
-      <div>
+      <div className={styles.controls}>
         <Button
           className={styles.button}
           type="button"
