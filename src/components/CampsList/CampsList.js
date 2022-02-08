@@ -65,10 +65,12 @@ const CampsList = (props) => {
 
         setCampsArray(loadedCamps);
         setIsLoading(false);
+
         props.scrollRef.current.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
+
       } catch (error) {
         console.error("Error fetching camps: ", error);
         setFetchError(error);
@@ -76,6 +78,7 @@ const CampsList = (props) => {
     };
 
     fetchCamps();
+
   }, [props.searchTerms]);
 
   // Lift selected camp info to App
@@ -83,11 +86,15 @@ const CampsList = (props) => {
     props.onViewCamp(camp);
   };
 
+  console.log(fetchError);
+
   return (
     <div className={styles.container}>
       <div>
         <h2>YOUR CAMPGROUND AWAITS</h2>
         {!fetchError && isLoading && <img src={loadingImage} />}
+        {!fetchError && !isLoading && campsArray.length === 0 && <p>The U.S. National Park Service is not tracking any campgrounds in this area.</p>}
+        {fetchError && !isLoading && <p>Error loading campgrounds. {fetchError}</p>}
         {!fetchError && !isLoading && campsArray.map((camp) => (
           <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
         ))}
