@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CampsList.module.css";
 import CampItem from "../CampItem/CampItem";
-import div from "../ui/Card/Card";
-import loadingImage from "../../assets/images/Spinner-1s-200px-bg-light.gif";
+import loadingImage from "../../assets/images/Spinner-1s-200px-white.gif";
 
 // TODO: Add limit filtering option
 const resultsLimit = 75;
@@ -88,7 +87,8 @@ const CampsList = (props) => {
     <div className={styles.container}>
       <div>
         <h2>YOUR CAMPGROUND AWAITS</h2>
-        {campsArray.map((camp) => (
+        {!fetchError && isLoading && <img src={loadingImage} />}
+        {!fetchError && !isLoading && campsArray.map((camp) => (
           <CampItem key={camp.id} camp={camp} onViewCamp={viewCampHandler} />
         ))}
       </div>

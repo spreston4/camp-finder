@@ -1,3 +1,4 @@
+// Provides options for dropdown select in CampSearch
 const stateList = [
     {
         name: "Alabama",
