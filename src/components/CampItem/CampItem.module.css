@@ -9,6 +9,9 @@
 .content {
   padding: 0.25rem;
 }
+ .content h3 {
+   padding-bottom: .25rem;
+ }
 
 .button {
   color: #272f3d;

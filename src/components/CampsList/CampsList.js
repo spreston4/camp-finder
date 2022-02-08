@@ -86,8 +86,6 @@ const CampsList = (props) => {
     props.onViewCamp(camp);
   };
 
-  console.log(fetchError);
-
   return (
     <div className={styles.container}>
       <div>

@@ -8,10 +8,16 @@ const CampItem = (props) => {
     props.onViewCamp(props.camp);
   };
 
+  console.log(props.camp);
+
+  const addressAvailable = props.camp.addresses[0];
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <h3>{props.camp.name.toUpperCase()}</h3>
+        {!addressAvailable && <p>Address data not available.</p>}
+        {addressAvailable && <p>{props.camp.addresses[0].city}</p>}
       </div>
       <div>
         <Button
