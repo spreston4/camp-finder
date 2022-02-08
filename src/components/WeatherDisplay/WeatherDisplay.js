@@ -41,7 +41,7 @@ const WeatherDisplay = (props) => {
     fetchWeather();
   }, []);
 
-  console.log(forecast);
+  // console.log(forecast);
 
   return (
     <div className={styles.container}>

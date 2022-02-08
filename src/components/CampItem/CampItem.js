@@ -8,13 +8,9 @@ const CampItem = (props) => {
     props.onViewCamp(props.camp);
   };
 
-  console.log(props.camp.contacts);
-
   const addressAvailable = props.camp.addresses[0];
   const emailAvailable = props.camp.contacts.emailAddresses.length > 0;
   const phoneAvailable = props.camp.contacts.phoneNumbers.length > 0;
-
-  console.log(emailAvailable);
 
   // console.log(emailAvailable);
   // if (data && data.email && data.email[0])

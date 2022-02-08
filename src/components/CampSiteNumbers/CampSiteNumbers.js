@@ -4,7 +4,7 @@ import styles from "./CampSiteNumbers.module.css";
 const CampSiteNumbers = (props) => {
   return (
     <React.Fragment>
-      <h3>Campsites</h3>
+      <h3>Campsites Avalable</h3>
       <div className={styles.details}>
         <div className={styles.individual}>
           <p className={styles.title}>Total Campsites</p>
