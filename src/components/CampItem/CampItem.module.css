@@ -18,6 +18,10 @@
   color:#272f3d
 }
 
+.content a:hover {
+  color: #c39a5f;
+}
+
 .button {
   color: #272f3d;
   background-color: #c6d8de;

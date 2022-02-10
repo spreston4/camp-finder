@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CampSiteNumbers.module.css";
 
+// Displays available camp site types to CampView. Accepts props from CampView.
 const CampSiteNumbers = (props) => {
   return (
     <React.Fragment>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CampSiteAmenities.module.css";
 
+// Displays available amenities to CampView. Accepts amenities as props from CampView.
 const CampSiteAmenities = (props) => {
   return (
     <React.Fragment>
