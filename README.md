@@ -1,8 +1,6 @@
 # Camp Finder
 
 - Images / carousel
-- Address / contact info
-- reservations
 
 - map
 

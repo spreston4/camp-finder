@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CampSiteRegulations.module.css";
 
+// Displays camp site regulations, resevation info, & contact info to CampView.
 const CampSiteRegulations = (props) => {
   const emailAvailable = props.contacts.emailAddresses.length > 0;
   const phoneAvailable = props.contacts.phoneNumbers.length > 0;

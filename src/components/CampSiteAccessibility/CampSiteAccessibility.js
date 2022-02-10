@@ -35,44 +35,47 @@ const CampSiteAccessibility = (props) => {
       </div>
       <h3>Directions</h3>
       <p>{props.directions}</p>
-      <br />
       <p>
         <a href={props.directionsUrl} target="_blank">
           Directions
         </a>
       </p>
-      <h3>Operating Hours</h3>
-      <p>{props.hours[0].description}</p>
-      <div className={styles.details}>
-        <div className={styles.individual}>
-          <p className={styles.title}>Monday</p>
-          <p>{props.hours[0].standardHours.monday}</p>
+      {props.hoursPresent && (
+        <div>
+          <h3>Operating Hours</h3>
+          <p>{props.hours[0].description}</p>
+          <div className={styles.details}>
+            <div className={styles.individual}>
+              <p className={styles.title}>Monday</p>
+              <p>{props.hours[0].standardHours.monday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Tuesday</p>
+              <p>{props.hours[0].standardHours.tuesday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Wednesday</p>
+              <p>{props.hours[0].standardHours.wednesday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Thursday</p>
+              <p>{props.hours[0].standardHours.thursday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Friday</p>
+              <p>{props.hours[0].standardHours.friday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Saturday</p>
+              <p>{props.hours[0].standardHours.saturday}</p>
+            </div>
+            <div className={styles.individual}>
+              <p className={styles.title}>Sunday</p>
+              <p>{props.hours[0].standardHours.sunday}</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Tuesday</p>
-          <p>{props.hours[0].standardHours.tuesday}</p>
-        </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Wednesday</p>
-          <p>{props.hours[0].standardHours.wednesday}</p>
-        </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Thursday</p>
-          <p>{props.hours[0].standardHours.thursday}</p>
-        </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Friday</p>
-          <p>{props.hours[0].standardHours.friday}</p>
-        </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Saturday</p>
-          <p>{props.hours[0].standardHours.saturday}</p>
-        </div>
-        <div className={styles.individual}>
-          <p className={styles.title}>Sunday</p>
-          <p>{props.hours[0].standardHours.sunday}</p>
-        </div>
-      </div>
+      )}
     </React.Fragment>
   );
 };
