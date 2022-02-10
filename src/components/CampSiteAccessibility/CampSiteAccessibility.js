@@ -21,16 +21,16 @@ const CampSiteAccessibility = (props) => {
           ))}
         </div>
         <div className={styles.individual}>
-          <p className={styles.title}>RV Info</p>
-          <p>{props.access.rvInfo}</p>
-        </div>
-        <div className={styles.individual}>
           <p className={styles.title}>Max RV Length</p>
           <p>{props.access.rvMaxLength}</p>
         </div>
         <div className={styles.individual}>
           <p className={styles.title}>Max Trailer Length</p>
           <p>{props.access.trailerMaxLength}</p>
+        </div>
+        <div className={styles.individual}>
+          <p className={styles.title}>RV Info</p>
+          <p>{props.access.rvInfo}</p>
         </div>
       </div>
       <h3>Directions</h3>
