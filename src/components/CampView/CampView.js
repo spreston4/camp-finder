@@ -4,6 +4,7 @@ import CampSiteNumbers from '../CampSiteNumbers/CampSiteNumbers';
 import CampSiteAmenities from '../CampSiteAmenities/CampSiteAmenities';
 import CampSiteAccessibility from '../CampSiteAccessibility/CampSiteAccessibility';
 import CampSiteFees from '../CampSiteFees/CampSiteFees';
+import CampSiteRegulations from '../CampSiteRegulations/CampSiteRegulations';
 import Button from '../ui/Button/Button';
 
 const CampView = (props) => {
@@ -17,6 +18,7 @@ const CampView = (props) => {
                <CampSiteAmenities amenities={props.camp.amenities} />
                <CampSiteAccessibility access={props.camp.accessibility} directions={props.camp.directionsOverview} directionsUrl={props.camp.directionsUrl} hours={props.camp.operatingHours} />
                <CampSiteFees fees={props.camp.fees} />
+               <CampSiteRegulations regs={props.camp.regulationsOverview} res={props.camp.reservationInfo} contacts={props.camp.contacts} />
             </div>
             <div className={styles.weather}>
                 <WeatherDisplay latitude={props.camp.latitude} longitude={props.camp.longitude} />

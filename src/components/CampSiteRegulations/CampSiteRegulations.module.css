@@ -1,0 +1,36 @@
+h3 {
+  padding: 0.5rem 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.individual {
+  margin: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+a {
+  color: #272f3d;
+}
+
+a:hover {
+  color: #c39a5f;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}

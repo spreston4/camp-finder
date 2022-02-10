@@ -7,7 +7,7 @@ const CampSiteFees = (props) => {
     <React.Fragment>
       <h3>Fees</h3>
       {props.fees.map((fee) => (
-        <div>
+        <div key={Math.random()}>
           <p className={styles.title}>
             ${fee.cost} - {fee.title}
           </p>
