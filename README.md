@@ -2,6 +2,9 @@
 
 - Images / carousel
 
+- weather
+
 - map
 
--- No description available bug
+- phone number formatting 
+
