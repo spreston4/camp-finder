@@ -1,6 +1,5 @@
 # Camp Finder
 
-- Images / carousel
 
 - weather
 

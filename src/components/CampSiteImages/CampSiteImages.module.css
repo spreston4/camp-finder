@@ -3,11 +3,11 @@
   margin: 1rem 0;
 }
 
-img {
+.container img {
   max-height: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 2px;
-  box-shadow: 0 3px 8px rgba(25, 97, 253, 0.5);
+  box-shadow: 0 3px 8px rgba(1, 94, 16, 0.5);
 }

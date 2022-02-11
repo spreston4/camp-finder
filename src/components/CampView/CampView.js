@@ -13,13 +13,14 @@ const CampView = (props) => {
   const standardHoursPresent = props.camp.operatingHours.length > 0;
   const imagesPresent = props.camp.images.length > 0;
 
-  console.log(props.camp);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <h2>{props.camp.name}</h2>
         {imagesPresent && <CampSiteImages images={props.camp.images} />}
+        <h3>Description</h3>
         <p>{props.camp.description}</p>
+      
         <CampSiteNumbers
           sites={props.camp.campsites}
           firstCome={props.camp.numberOfSitesFirstComeFirstServe}
@@ -40,12 +41,11 @@ const CampView = (props) => {
           contacts={props.camp.contacts}
         />
       </div>
-      <div className={styles.weather}>
-        <WeatherDisplay
+    
+      <WeatherDisplay
           latitude={props.camp.latitude}
           longitude={props.camp.longitude}
         />
-      </div>
       <div className={styles.controls}>
         <Button onClick={props.onCloseCamp} className={styles.button}>
           RETURN

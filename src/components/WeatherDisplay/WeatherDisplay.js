@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./WeatherDisplay.module.css";
+import WeatherDisplayItem from "../WeatherDisplayItem/WeatherDisplayItem";
 
 const WeatherDisplay = (props) => {
   const [forecast, setForecast] = useState([]);
@@ -41,12 +42,18 @@ const WeatherDisplay = (props) => {
     fetchWeather();
   }, []);
 
-  // console.log(forecast);
+  console.log(forecast);
 
   return (
     <div className={styles.container}>
+      <h3>Weather: 7-Day Forecast</h3>
       {isLoading && <p>Loading weather forecast.</p>}
-      {!isLoading && <p>Weather Display.</p>}
+      <div className={styles.forecast}>
+        {!isLoading &&
+          forecast.map((day) => (
+            <WeatherDisplayItem key={day.key} forecast={day} />
+          ))}
+      </div>
     </div>
   );
 };
