@@ -1,6 +1,7 @@
 .container {
   width: 90%;
   margin: 4rem 5rem;
+  position: relative;
   color: #272f3d;
 }
 
@@ -10,15 +11,46 @@
 
 .content h2,
 .content h3 {
-    padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
-.weather {
-    margin: 0.25rem;
+.controls {
+  z-index: 5;
 }
 
 .button {
   color: #272f3d;
   background-color: #ffffff;
   border: 1px solid #272f3d;
+}
+
+.visible {
+  animation: slide-up 400ms ease-out forwards;
+}
+
+.hidden {
+  z-index: 1;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
 }
