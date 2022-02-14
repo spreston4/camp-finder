@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/camp-finder/static/css/main.9c035af4.css",
-    "main.js": "/camp-finder/static/js/main.d1f78e41.js",
+    "main.css": "/camp-finder/static/css/main.d6039d18.css",
+    "main.js": "/camp-finder/static/js/main.0d2256fd.js",
     "static/media/CF_Banner.jpg": "/camp-finder/static/media/CF_Banner.e81f2f0ac5fac14028bd.jpg",
-    "static/media/Spinner-1s-200px-bg-light.gif": "/camp-finder/static/media/Spinner-1s-200px-bg-light.d28187c0afb8659ab281.gif",
+    "static/media/Spinner-1s-200px-white.gif": "/camp-finder/static/media/Spinner-1s-200px-white.5d866dd6b27ed51892a8.gif",
+    "static/media/revicons.eot": "/camp-finder/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/camp-finder/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/camp-finder/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/camp-finder/index.html",
-    "main.9c035af4.css.map": "/camp-finder/static/css/main.9c035af4.css.map",
-    "main.d1f78e41.js.map": "/camp-finder/static/js/main.d1f78e41.js.map"
+    "main.d6039d18.css.map": "/camp-finder/static/css/main.d6039d18.css.map",
+    "main.0d2256fd.js.map": "/camp-finder/static/js/main.0d2256fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c035af4.css",
-    "static/js/main.d1f78e41.js"
+    "static/css/main.d6039d18.css",
+    "static/js/main.0d2256fd.js"
   ]
 }
