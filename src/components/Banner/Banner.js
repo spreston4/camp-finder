@@ -1,5 +1,6 @@
 import styles from "./Banner.module.css";
 
+// Displays welcome banner to the user.
 const Banner = () => {
   return (
     <div className={styles.container}>

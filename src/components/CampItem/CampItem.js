@@ -8,13 +8,10 @@ const CampItem = (props) => {
     props.onViewCamp(props.camp);
   };
 
+  // Ensure valid data is present. Instead of returning an empty value for the property if data is not present, the API doesn't return the property at all - resulting in an app-breaking error.
   const addressAvailable = props.camp.addresses[0];
   const emailAvailable = props.camp.contacts.emailAddresses.length > 0;
   const phoneAvailable = props.camp.contacts.phoneNumbers.length > 0;
-
-  // console.log(emailAvailable);
-  // if (data && data.email && data.email[0])
-  // if (data?.email?.[0])
 
   return (
     <div className={styles.container}>
@@ -30,9 +27,18 @@ const CampItem = (props) => {
           </div>
         )}
         {emailAvailable && (
-          <p><a href={`mailto:${props.camp.contacts.emailAddresses[0].emailAddress}`}target="_blank">E-Mail</a></p>
+          <p>
+            <a
+              href={`mailto:${props.camp.contacts.emailAddresses[0].emailAddress}`}
+              target="_blank"
+            >
+              E-Mail
+            </a>
+          </p>
         )}
-        {phoneAvailable && <p>{props.camp.contacts.phoneNumbers[0].phoneNumber}</p>}
+        {phoneAvailable && (
+          <p>{props.camp.contacts.phoneNumbers[0].phoneNumber}</p>
+        )}
         <br />
         <p>{props.camp.description}</p>
       </div>

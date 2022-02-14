@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 
 // Reusable button component. Inherits className and Onclick from parent.
 const Button = (props) => {
+  // Hover state to make smooth hover animations when hovering and leaving hover.
   const [isHover, setIsHover] = useState(false);
 
   const addHoverHandler = () => {
@@ -13,6 +14,7 @@ const Button = (props) => {
     setIsHover(false);
   };
 
+  // Conditional formatting based on hover state.
   const buttonClasses = `${styles.button} ${props.className} ${
     isHover ? styles.hover : ""
   }`;

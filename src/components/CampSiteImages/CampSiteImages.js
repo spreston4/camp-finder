@@ -23,7 +23,7 @@ const responsive = {
   },
 };
 
-// Displays a carousel of images of the selected campground to CampView.
+// Displays a carousel of images of the selected campground to CampView. Receives image data from CampView.
 const CampSiteImages = (props) => {
   return (
     <div className={styles.container}>

@@ -7,6 +7,7 @@ import CampSearch from "./components/CampSearch/CampSearch";
 import CampsList from "./components/CampsList/CampsList";
 import CampView from "./components/CampView/CampView";
 
+// Parent component
 function App() {
   const [searchTerms, setSearchTerms] = useState();
   const [selectedCamp, setSelectedCamp] = useState();
@@ -30,12 +31,20 @@ function App() {
       <Banner />
       <div className={styles.functions}>
         <Message />
-        <CampSearch onUpdateSearch={searchUpdateHandler} onCloseCamp={closeCampHandler} scrollRef={contentRef}/>
+        <CampSearch
+          onUpdateSearch={searchUpdateHandler}
+          onCloseCamp={closeCampHandler}
+          scrollRef={contentRef}
+        />
       </div>
       <div ref={contentRef}></div>
-    <div>
+      <div>
         {!selectedCamp && searchTerms && (
-          <CampsList searchTerms={searchTerms} onViewCamp={viewCampHandler} scrollRef={contentRef}/>
+          <CampsList
+            searchTerms={searchTerms}
+            onViewCamp={viewCampHandler}
+            scrollRef={contentRef}
+          />
         )}
         {selectedCamp && (
           <CampView camp={selectedCamp} onCloseCamp={closeCampHandler} />

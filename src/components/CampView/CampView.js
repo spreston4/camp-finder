@@ -14,7 +14,7 @@ const CampView = (props) => {
   const [showWeatherStyle, setShowWeatherStyle] = useState(false);
   const [showWeatherContainer, setShowWeatherContainer] = useState(false);
 
-  // Ensure valid info is sent to children
+  // Ensure valid info is sent to children. Odd app-breaking erros occur if these two values aren't checked - instead of returning empty property values if data isn't provided, the api just doesn't return the property at all.
   const standardHoursPresent = props.camp.operatingHours.length > 0;
   const imagesPresent = props.camp.images.length > 0;
 

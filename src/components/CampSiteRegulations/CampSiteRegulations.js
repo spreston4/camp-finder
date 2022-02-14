@@ -3,6 +3,7 @@ import styles from "./CampSiteRegulations.module.css";
 
 // Displays camp site regulations, resevation info, & contact info to CampView.
 const CampSiteRegulations = (props) => {
+  // Ensure valid info is present. Instead of returning empty values for these properties if data isn't present, the API just doesn't return the property at all, resulting in an app-breaking error.
   const emailAvailable = props.contacts.emailAddresses.length > 0;
   const phoneAvailable = props.contacts.phoneNumbers.length > 0;
   const contactAvailable = emailAvailable || phoneAvailable;

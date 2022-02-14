@@ -1,5 +1,6 @@
 import styles from "./WeatherDisplayItem.module.css";
 
+// Array to convert date data to readable day format.
 const dayArray = [
   "Sunday",
   "Monday",
@@ -10,6 +11,7 @@ const dayArray = [
   "Saturday",
 ];
 
+// Displays weather for a single day to WeatherDisplay component. Receives weather data from WeatherDisplay.
 const WeatherDisplayItem = (props) => {
   const forecastDateData = new Date(props.forecast.dt * 1000);
   return (

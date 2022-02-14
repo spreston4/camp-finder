@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 
+// Displays site ttile to the user. Remains fixed tot eh top of the window & scales as the user scrolls the page.
 const Header = () => {
   const [isSmall, setIsSmall] = useState(false);
 

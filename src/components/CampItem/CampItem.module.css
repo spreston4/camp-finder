@@ -15,7 +15,7 @@
 }
 
 .content a {
-  color:#272f3d
+  color: #272f3d;
 }
 
 .content a:hover {
@@ -29,6 +29,6 @@
 }
 
 .controls {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #272f3d;
 }

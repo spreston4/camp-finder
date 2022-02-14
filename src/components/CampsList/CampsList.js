@@ -66,6 +66,7 @@ const CampsList = (props) => {
         setCampsArray(loadedCamps);
         setIsLoading(false);
 
+        // Autoscroll to results after data is fetch - lets user know that a search has occured.
         props.scrollRef.current.scrollIntoView({
           behavior: "smooth",
           block: "start",

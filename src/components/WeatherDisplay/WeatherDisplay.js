@@ -3,6 +3,7 @@ import styles from "./WeatherDisplay.module.css";
 import WeatherDisplayItem from "../WeatherDisplayItem/WeatherDisplayItem";
 import loadingImage from "../../assets/images/Spinner-1s-200px-white.gif";
 
+// Displays a 7-day weather forecast to the user when toggled in CampView. Renders a WeatherDisplayItem for each day. Recieves location data from CampView and passes weather data to WeatherDisplayItem.
 const WeatherDisplay = (props) => {
   const [forecast, setForecast] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,9 +50,9 @@ const WeatherDisplay = (props) => {
       {isLoading && <img src={loadingImage} />}
       <div className={styles.forecast}>
         {!isLoading &&
-          forecast.slice(1, 8).map((day) => (
-            <WeatherDisplayItem key={day.key} forecast={day} />
-          ))}
+          forecast
+            .slice(1, 8)
+            .map((day) => <WeatherDisplayItem key={day.key} forecast={day} />)}
       </div>
     </div>
   );
